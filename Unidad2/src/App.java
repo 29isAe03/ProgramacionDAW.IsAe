@@ -1,12 +1,13 @@
 import java.time.LocalDateTime;
 import java.util.Scanner;
+import Utilidades.Matematicas;
 
 /**
  * @author Domingo López Oller
  * @version 1.0
  * App: Primer codigo
  */
-public class App {
+// public class App {
 
     /**
      * Función main para ejecutar código java
@@ -66,20 +67,95 @@ public class App {
         // String nombre=sc.nextLine();
         // System.out.println("El numero es: "+numero" y tu nombre es "+nombre" ");
        
-        LocalDateTime hoy = LocalDateTime.now();
-        System.out.println("Hoy es: " + hoy.getDayOfWeek()); // nombre del día
-        System.out.println("El día es: " + hoy.getDayOfMonth());
-        System.out.println("El mes es: " + hoy.getMonth()); // nombre del mes
-        System.out.println("El año es: " + hoy.getYear());
-        System.out.println("Hora: " + hoy.getHour() + " Minutos: " + hoy.getMinute());
+    //     LocalDateTime hoy = LocalDateTime.now();
+    //     System.out.println("Hoy es: " + hoy.getDayOfWeek()); // nombre del día
+    //     System.out.println("El día es: " + hoy.getDayOfMonth());
+    //     System.out.println("El mes es: " + hoy.getMonth()); // nombre del mes
+    //     System.out.println("El año es: " + hoy.getYear());
+    //     System.out.println("Hora: " + hoy.getHour() + " Minutos: " + hoy.getMinute());
 
-        System.out.println(Math.pow(2, 5));
+    //     System.out.println(Math.pow(2, 5));
 
-        int max=15;
-        int min=1;
-        char letra='b';
-        double aleatorio=(int)(Math.random()*(max-min+1)+min);
-        System.out.println((char)(letra+aleatorio));
-    }
+    //     int max=15;
+    //     int min=1;
+    //     char letra='b';
+    //     double aleatorio=(int)(Math.random()*(max-min+1)+min);
+    //     System.out.println((char)(letra+aleatorio));
+    // }
    
+    //CLASE 3
+    //Utilizar las funciones sumar y multiplicar de la clase Matemáticas
+    // int numero1=3;
+    // int numero2=5;
+    // System.out.println("La suma es: "+Matematicas.sumar(numero1, numero2));
+    // System.out.println("La multiplicación es: "+Matematicas.multiplicar(numero1, numero2));
+
+    // System.out.println("El resto de la division 5/2 es:"+(5%2));
+    // int variable=2;
+    // System.out.println("La variable vale: "+variable);
+    // variable++; //Variable=variable+1
+    // System.out.println("La variable vale: "+variable);
+
+    // int valor1=3;
+    // int valor2=5;
+    // valor1+=valor2; 
+
+    //Condiciones If-Else
+    // int numero=3;
+    // int numero2=5;
+    // int resultado;
+    // if(numero>numero2){
+    //     //Si se cumple hára esto
+    //     resultado=numero+numero2;
+    // }
+    // else{
+    //    //Sino se cumple hará esto
+    //    resultado=numero-numero2;
+    // }
+    // System.out.println(numero+" "+numero2+" "+resultado);
+    // //Usando el poerador ternario
+    // resultado=(numero>numero2) ? numero+numero2:numero-numero2;
+    // System.out.println("Por aquí voy");
+    // System.out.println(numero+" "+numero2+" "+resultado);
+
+    // int dia=2;
+
+    // if(dia==1){
+    //     System.out.println("Hoy es lunes");
+    // }
+    // else if(dia==2){
+    //     System.out.println("Hoy es martes");
+    // }
+    // else if(dia==3){
+    //     System.out.println("Hoy es miercoles");
+    // }
+    // else if(dia==4){
+    //     System.out.println("Hoy es jueves");
+    // }
+    // else if(dia==5){
+    //     System.out.println("Hoy es viernes");
+    // }
+    // else if(dia==6){
+    //     System.out.println("Hoy es sabado");
+    // }
+    // else if(dia==7){
+    //     System.out.println("Hoy es domingo");
+    // }
+    
+    // //Switch
+    // int valor=3;
+    // switch(valor){
+    //     case 1: System.out.println("Lunes");
+    //     case 2: System.out.println("Martes");
+    //     case 3: System.out.println("Miercoles");
+    //     case 4: System.out.println("Jueves");
+    //     case 5: System.out.println("Vieres");
+    //     case 6: System.out.println("Sabado");
+    //     case 7: System.out.println("Domingo");
+    //     default: System.out.println("Incorrecto");
+
+    
+
 }
+
+    
