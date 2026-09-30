@@ -154,6 +154,10 @@ import Utilidades.Matematicas;
     //     case 7: System.out.println("Domingo");
     //     default: System.out.println("Incorrecto");
 
+    int numero=4;
+    System.out.println((int)(Matematicas.raiz(numero)));
+    
+
     
 
 }
