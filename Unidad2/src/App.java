@@ -58,7 +58,7 @@ import Utilidades.Matematicas;
 
         //CLASE 2
 
-        // Scanner sc=new Scanner(System.in); //Introducir valor por teclado
+        Scanner sc=new Scanner(System.in); //Introducir valor por teclado
         // int numero;
 
         // System.out.println("Introduce un número");
@@ -154,8 +154,24 @@ import Utilidades.Matematicas;
     //     case 7: System.out.println("Domingo");
     //     default: System.out.println("Incorrecto");
 
-    int numero=4;
-    System.out.println((int)(Matematicas.raiz(numero)));
+    //Clase 4
+    //Estructuras: For
+    // for(int i=0;i<3;i++){
+    //     System.out.println(i);
+    // }
+    //Estructura: While
+    int i=0;
+    while(i<0){
+        System.out.println(i);
+        i++;
+    }
+    //Estructura: Do-While
+    
+    do{
+        System.out.println(i);
+        i++;
+    }while(i<0);
+
     
 
     
