@@ -160,22 +160,28 @@ import Utilidades.Matematicas;
     //     System.out.println(i);
     // }
     //Estructura: While
-    int i=0;
-    while(i<0){
-        System.out.println(i);
-        i++;
+    // int i=0;
+    // while(i<0){
+    //     System.out.println(i);
+    //     i++;
+    // }
+    // //Estructura: Do-While
+    
+    // do{
+    //     System.out.println(i);
+    //     i++;
+    // }while(i<0);
+    
+    //Clase 5: Buqules anidados
+    for(int i=1;i<=10;i++){
+        System.out.println("La tabla del: "+i);
+        for(int j=1;j<=10;j++){
+            System.out.println(i+ "x" +j+ "=" +(i*j));
+            
+        }
+        
     }
-    //Estructura: Do-While
     
-    do{
-        System.out.println(i);
-        i++;
-    }while(i<0);
-
-    
-
-    
-
 }
 
     

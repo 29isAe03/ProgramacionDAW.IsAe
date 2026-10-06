@@ -1,4 +1,5 @@
 public class Actividad {
+ public static void actividad1(){}
     public static void main(String[] args) {
 
         //Creo el rango de los números
@@ -27,4 +28,6 @@ public class Actividad {
         System.out.println("La raíz del primer número es:" +raiz1);
         System.out.println("La raíz del segundo número es: " +raiz2);
     }
+
+
 }
