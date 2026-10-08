@@ -2,6 +2,34 @@ import java.time.LocalDateTime;
 import java.util.Scanner;
 
 public class Ejercicios {
+    public static int numeroPar(int numero){
+            int contadorPar=0;
+            if(numero==0){
+                contadorPar=1;
+            }
+            else{
+                while(numero>0){
+                    int digito=numero%10;
+                    if(digito%2==0){
+                        contadorPar++;
+                    }
+                    numero=numero/10;
+                }
+            }
+            return contadorPar;
+        }
+    public static int numeroImpar(int numero){
+        int contadorImpar=0;
+        while(numero>0){
+            int digito=numero%10;
+            if(digito%2!=0){
+                contadorImpar++;
+            }
+     
+        }
+        return contadorImpar;
+    }   
+
     public void ejercicio1(){
         //Pongo la libreria del tiempo
         LocalDateTime hoy = LocalDateTime.now();
@@ -156,6 +184,40 @@ public class Ejercicios {
          System.out.println("---------------------------");
         System.out.println("Sueldo neto: "+neto);
     }
+    public void actividad5(){
+                Scanner sc=new Scanner(System.in);
+        //Creo una variable para cada dia de la semana teniendo cada una sus horas, aparte creo una que tenga todos los dias
+        String horario=" Lunes: Entornos, LM, BD, Sistemas, Sistemas, Programación \n Martes: Sistemas, Digit, IPE, Sostenibilidad, Programación, Programación \n Miércoles: Programación, Programación, IPE, BD, BD, Programación \n Jueves: LM, LM, BD, BD, Programación, Programación \n Viernes: Sistemas, Sistemas, BD, Entornos, Entornos, IPE";
+        String lunes="Lunes: Entornos, LM, BD, Sistemas, Sistemas, Programación";
+        String martes="Martes: Sistemas, Digit, IPE, Sostenibilidad, Programación, Programación";
+        String miercoles="Miércoles: Programación, Programación, IPE, BD, BD, Programación";
+        String jueves="Jueves: LM, LM, BD, BD, Programación, Programación";
+        String viernes="Viernes: Sistemas, Sistemas, BD, Entornos, Entornos, IPE";
+        int dia;
+
+        System.out.println(lunes);
+        System.out.println(martes);
+        System.out.println(miercoles);
+        System.out.println(jueves);
+        System.out.println(viernes);
+        
+        System.out.print("Inserte dia: ");
+        //Hago un bucle para que te vaya diciendo dias hasta que escribas 7
+        do{
+            dia=sc.nextInt(); sc.nextLine();
+            //Hago un switch porque solo varia la variable dia del 1-6
+            switch (dia) {
+                case 1: System.out.println(lunes); break;
+                case 2: System.out.println(martes); break;
+                case 3: System.out.println(miercoles); break;
+                case 4: System.out.println(jueves); break;
+                case 5: System.out.println(viernes); break;
+                case 6: System.out.println(horario); break;
+            }
+            System.out.println("--------------------------------------------------------------"); //Pongo barras para que quede mas organizado
+        }
+        while(dia!=7);
+    }
     public void actividad7(){
                         Scanner sc=new Scanner(System.in);
         //Creo una variable para el numero, contador de positivos, negativos y sietes, y la suma para hacer la media
@@ -211,9 +273,8 @@ public class Ejercicios {
         }
     }
     public void actividad9(){}
-    public void actividad10(){}
-    public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
+    public void actividad10(){
+                Scanner sc=new Scanner(System.in);
         System.out.print("Escriba el numero: ");
         int numero=sc.nextInt();
         int contadorPar=0;
@@ -233,10 +294,12 @@ public class Ejercicios {
               numero=numero/10;
             }
         System.out.println("Tiene "+contadorPar+ " Pares y "+contadorImpar+" Impares");
-        
-
-
-
         }
     }
+    public static void main(String[] args) {
+        
+
+    }
 }
+    
+
