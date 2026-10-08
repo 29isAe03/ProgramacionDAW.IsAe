@@ -119,11 +119,124 @@ public class Ejercicios {
                 System.out.println("Recuperación no apta, alumno suspenso. La media es: "+media);
             }
         }
-    } 
-    
-    public static void main(String[] args) {
+    }
+    public void actividad6(){
         
+        Scanner sc=new Scanner(System.in);
+        //Creo una variable para los dos sueldos
+        int bruto=0;
+        int neto=0;
+        System.out.print("Escriba el cargo(1-3): ");
+        int empleo=sc.nextInt(); sc.nextLine();
+        //Hago un switch para que dependiendo el cargo asigne una cantidad u otra
+        switch(empleo){
+            case 1: bruto=950; break;
+            case 2: bruto=1200; break;
+            case 3: bruto=1600; break;
+        }
+        System.out.print("Introduzca dias de viaje: ");
+        int viaje=sc.nextInt(); sc.nextLine();
+        //Simplemente hago que si hay dias de viaje te los añada al sueldo
+        if(viaje>0){
+            bruto=bruto+(viaje*30);
+        }
+        System.out.print("Introduzca estado civil(1-2): ");
+        int estado=sc.nextInt();
+        System.out.println("---------------------------"); //Pongo las lineas para hacerlo mas bonito
+        System.out.println("Sueldo bruto: "+bruto);
+        //Hago que depiendo del estado civil, te quite un 20 o 25% en IRPF
+        if(estado==1){
+            neto=bruto-((bruto*25)/100);
+            System.out.println("Retención IRPF(25%): "+(bruto*25)/100);
+        }
+        else{
+            neto=bruto-((bruto*20)/100);
+            System.out.println("Retención IRPF(20%): "+(bruto*20)/100);
+        }
+         System.out.println("---------------------------");
+        System.out.println("Sueldo neto: "+neto);
+    }
+    public void actividad7(){
+                        Scanner sc=new Scanner(System.in);
+        //Creo una variable para el numero, contador de positivos, negativos y sietes, y la suma para hacer la media
+        int numero=0;
+        int contadorP=0;
+        int contadorN=0;
+        int contador7=0;
+        int suma=0;
+        System.out.println("Diga numeros");
+        do{
+            numero=sc.nextInt(); sc.nextLine();
+            //Hago que la suma sea actualice con cada numero
+            suma=suma+numero;
+            //Si el numero es negativo, se sumara uno al contador negativo, si llega a ser -7 se sumara al contador de sietes
+            if(numero<0){
+                contadorN++;
+                if(numero==(-7)){
+                    contador7++;
+                }
+            }
+            //Lo mismo aqui pero con positivos
+            else if(numero>0){
+                contadorP++;
+                if(numero==7){
+                    contador7++;
+                }
+            }
+        }
+        //Acaba cuando escribas 0
+        while(numero!=0);
+        //Hago que te escriba las veces que salio cada numero, los sietes y la media
+        System.out.println("Numeros positivos: "+contadorP);
+        System.out.println("Numeros negativos: "+contadorN);
+        System.out.println("Sietes: "+contador7);
+        System.out.println("La media es: "+(suma/(contadorN+contadorP)));
+    
+
+    }
+    public void actividad8(){
+                Scanner sc=new Scanner(System.in);
+        //Hago que te pida la cantidad de numeros que quieras y creo los dos primeros valores: 0 y 1
+        System.out.print("Diga cantidad de numeros: ");
+        int numero=sc.nextInt(); sc.nextLine();
+        System.out.println("----");
+        int valor1=0;
+        int valor2=1;
+        //Hago un bucle que haga que el numero 1 pase a ser el 2, y el 2 pase a ser la suma del 1 y 2. Asi hasta llegar al numero deseado
+        for(int i=0;i<=numero;i++){
+            System.out.println(valor1+ " ");
+            int valor3=valor1+valor2;
+            valor1=valor2;
+            valor2=valor3;
+        }
+    }
+    public void actividad9(){}
+    public void actividad10(){}
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Escriba el numero: ");
+        int numero=sc.nextInt();
+        int contadorPar=0;
+        int contadorImpar=0;
+        if(numero==0){
+            contadorPar=1;
+        }
+        else{
+            while(numero>0){
+              int digito=numero%10;
+              if(digito%2==0){
+                contadorPar++;
+              }
+              else{
+                  contadorImpar++;
+              }
+              numero=numero/10;
+            }
+        System.out.println("Tiene "+contadorPar+ " Pares y "+contadorImpar+" Impares");
         
 
+
+
+        }
     }
 }
