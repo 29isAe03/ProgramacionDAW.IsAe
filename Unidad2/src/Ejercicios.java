@@ -211,12 +211,8 @@ public class Ejercicios {
         String jueves="Jueves: LM, LM, BD, BD, Programación, Programación";
         String viernes="Viernes: Sistemas, Sistemas, BD, Entornos, Entornos, IPE";
         int dia;
-
-        System.out.println(lunes);
-        System.out.println(martes);
-        System.out.println(miercoles);
-        System.out.println(jueves);
-        System.out.println(viernes);
+        //Muestro todo el horario
+        System.out.println(horario);
         
         System.out.print("Inserte dia: ");
         //Hago un bucle para que te vaya diciendo dias hasta que escribas 7
@@ -291,7 +287,9 @@ public class Ejercicios {
     }
     public void actividad9(){
                 System.out.println("Números primos del 1 al 100");
+        //Hago un for para que vaya subiendo del 1 al 100 viendo si es primo
         for(int i=1;i<=100;i++){
+            //Si se cumple la funcion, es primo
             if(primos1al100(i)){
                 System.out.println(i);
             }
@@ -303,18 +301,22 @@ public class Ejercicios {
         int numero=sc.nextInt();
         int contadorPar=0;
         int contadorImpar=0;
+        //Si el numero es 0, solo tendra un numero par
         if(numero==0){
             contadorPar=1;
         }
         else{
             while(numero>0){
+              //Hago que se divida el numero entre 10, el resto siempre sera el primer digito del número, ahi se mira si ese es par o impar
               int digito=numero%10;
+              //Un numero es par si se puede dividir entre 2 y el resto es 0
               if(digito%2==0){
                 contadorPar++;
               }
               else{
                   contadorImpar++;
               }
+              //Despues de ver si es par o impar, se divide entre 10 para eliminar el digito que ya se chequeo y que pase al siguiente
               numero=numero/10;
             }
         System.out.println("Tiene "+contadorPar+ " Pares y "+contadorImpar+" Impares");
