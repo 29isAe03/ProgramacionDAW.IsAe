@@ -29,6 +29,23 @@ public class Ejercicios {
         }
         return contadorImpar;
     }   
+    public static boolean primos1al100(int numero){
+            if(numero<=1){
+                return false;
+            }
+            else{                   
+                for(int j=2;j<=(Math.sqrt(numero));j++){
+                    if(numero%j==0){
+                        return false;
+                        
+                    }
+                }
+            }
+            return true;
+            
+        }
+        
+
 
     public void ejercicio1(){
         //Pongo la libreria del tiempo
@@ -272,7 +289,14 @@ public class Ejercicios {
             valor2=valor3;
         }
     }
-    public void actividad9(){}
+    public void actividad9(){
+                System.out.println("Números primos del 1 al 100");
+        for(int i=1;i<=100;i++){
+            if(primos1al100(i)){
+                System.out.println(i);
+            }
+        }
+    }
     public void actividad10(){
                 Scanner sc=new Scanner(System.in);
         System.out.print("Escriba el numero: ");
@@ -297,7 +321,8 @@ public class Ejercicios {
         }
     }
     public static void main(String[] args) {
-        
+
+
 
     }
 }
