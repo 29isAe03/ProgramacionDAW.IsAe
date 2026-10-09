@@ -2,7 +2,7 @@ import java.time.LocalDateTime;
 import java.util.Scanner;
 
 public class Ejercicios {
-    public static int numeroPar(int numero){
+    public static int numeroPar(int numero){ //Contador de pares de un numero
             int contadorPar=0;
             if(numero==0){
                 contadorPar=1;
@@ -18,7 +18,7 @@ public class Ejercicios {
             }
             return contadorPar;
         }
-    public static int numeroImpar(int numero){
+    public static int numeroImpar(int numero){ //Contador de impares de un numero
         int contadorImpar=0;
         while(numero>0){
             int digito=numero%10;
@@ -29,7 +29,7 @@ public class Ejercicios {
         }
         return contadorImpar;
     }   
-    public static boolean primos1al100(int numero){
+    public static boolean primos1al100(int numero){ //Ver si un numero es primo
             if(numero<=1){
                 return false;
             }
@@ -47,7 +47,7 @@ public class Ejercicios {
         
 
 
-    public void ejercicio1(){
+    public void ejercicio1(){ //Saludo dependiendo de la hora
         //Pongo la libreria del tiempo
         LocalDateTime hoy = LocalDateTime.now();
         //Creo la variable hora que tenga la hora actual
@@ -63,7 +63,7 @@ public class Ejercicios {
             System.out.println("Buenas noches!");
         }
     }
-    public void ejercicio2(){
+    public void ejercicio2(){ //Sueldo dependiendo de <>40 horas
         //Activo la libreria Scanner
         Scanner sc =new Scanner(System.in);
         System.out.print("Diga las horas trabajadas:");
@@ -90,7 +90,7 @@ public class Ejercicios {
         }
         System.out.println("Ha ganado "+dinero+" euros");
     }
-    public void actividad3(){
+    public void actividad3(){ //Signo zodiacal
         //Abro Scanner
        Scanner sc=new Scanner(System.in);
        //Hago que tengas que escribir el dia y el mes
@@ -137,7 +137,7 @@ public class Ejercicios {
         System.out.println("Es piscis");
        }
     }
-    public void actividad4(){
+    public void actividad4(){ //Alumno recuperación
         Scanner sc=new Scanner(System.in);
         //Hago que pida la nota de los dos parciales
         System.out.print("Diga la nota del primer parcial: ");
@@ -165,7 +165,7 @@ public class Ejercicios {
             }
         }
     }
-    public void actividad6(){
+    public void actividad6(){ //Sueldo con IRPF y dias en dieta
         
         Scanner sc=new Scanner(System.in);
         //Creo una variable para los dos sueldos
@@ -201,7 +201,7 @@ public class Ejercicios {
          System.out.println("---------------------------");
         System.out.println("Sueldo neto: "+neto);
     }
-    public void actividad5(){
+    public void actividad5(){ //Horario
                 Scanner sc=new Scanner(System.in);
         //Creo una variable para cada dia de la semana teniendo cada una sus horas, aparte creo una que tenga todos los dias
         String horario=" Lunes: Entornos, LM, BD, Sistemas, Sistemas, Programación \n Martes: Sistemas, Digit, IPE, Sostenibilidad, Programación, Programación \n Miércoles: Programación, Programación, IPE, BD, BD, Programación \n Jueves: LM, LM, BD, BD, Programación, Programación \n Viernes: Sistemas, Sistemas, BD, Entornos, Entornos, IPE";
@@ -231,7 +231,7 @@ public class Ejercicios {
         }
         while(dia!=7);
     }
-    public void actividad7(){
+    public void actividad7(){ //Contador positivos, negativos y sietes
                         Scanner sc=new Scanner(System.in);
         //Creo una variable para el numero, contador de positivos, negativos y sietes, y la suma para hacer la media
         int numero=0;
@@ -269,7 +269,7 @@ public class Ejercicios {
     
 
     }
-    public void actividad8(){
+    public void actividad8(){ //Fibonacci
                 Scanner sc=new Scanner(System.in);
         //Hago que te pida la cantidad de numeros que quieras y creo los dos primeros valores: 0 y 1
         System.out.print("Diga cantidad de numeros: ");
@@ -285,7 +285,7 @@ public class Ejercicios {
             valor2=valor3;
         }
     }
-    public void actividad9(){
+    public void actividad9(){ //Numeros primos del 1 al 10
                 System.out.println("Números primos del 1 al 100");
         //Hago un for para que vaya subiendo del 1 al 100 viendo si es primo
         for(int i=1;i<=100;i++){
@@ -295,7 +295,7 @@ public class Ejercicios {
             }
         }
     }
-    public void actividad10(){
+    public void actividad10(){ //Digitos pares e impares de un numero
                 Scanner sc=new Scanner(System.in);
         System.out.print("Escriba el numero: ");
         int numero=sc.nextInt();
