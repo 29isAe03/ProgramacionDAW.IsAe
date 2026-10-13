@@ -323,8 +323,7 @@ public class Actividades {
     //         divisibilidad=false;
     //     }
     //     return divisibilidad;
-    }
-    public static 
+    
     public static void main(String[] args) {
         
         //Uso de las funciones creadas de las actividades
@@ -353,5 +352,45 @@ public class Actividades {
     //     valorA=valorJ;
     //     imprimir("Valor de variable: ",valorA);
     // }
+    // System.out.println(numeros(67));
+    // System.out.println(suma(7));
+    // System.out.println(potencia(2, 6));
+
+    // Assert y excepciones
+    int edad=-5;
+    assert edad>=0: "Edad incorrecta";
+    System.out.println("Fin");
+
+
     }
+
+    public static int numeros(int n){
+        //Caso base
+        if(n>0 && n<=9){
+            return 1;
+        }
+        else{
+            return 1+numeros(n/10);
+        }
+    }
+
+    public static int suma(int n){
+        if(n==0){
+            return 0;
+        }
+        else{
+            return n+suma(n-1);
+        }
+    }
+    public static int potencia(int a, int b){
+        if(b==0){
+            return 1;
+        }
+        else{
+            return a*potencia(a, b-1);
+        }
+    }
+
+
+
 }

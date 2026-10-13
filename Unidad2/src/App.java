@@ -13,6 +13,34 @@ import Utilidades.Matematicas;
      * Función main para ejecutar código java
      * @param args es un argumento
      */
+    public static int calcularFactorial(int n){
+        if(n==0){
+            return 1;
+        }
+        else{
+            return n*calcularFactorial(n-1);
+        }
+        
+    }
+    public static int funcion(int num, int pos){
+        if(num<10){
+            return num;
+        }
+        else{
+            return (funcion(num/10, pos-1))+(num%10)*(int) Math.pow(10, pos);
+        }
+    }
+    public static void incre(int n){
+        if(n>0){
+            System.out.print(n);
+            incre(n-1);
+
+        }
+        else{
+            System.out.println();
+            
+        }
+    }
     public static void main(String[] args) {
         // double edad;
         // edad=400000;
@@ -173,15 +201,20 @@ import Utilidades.Matematicas;
     // }while(i<0);
     
     //Clase 5: Buqules anidados
-    for(int i=1;i<=10;i++){
-        System.out.println("La tabla del: "+i);
-        for(int j=1;j<=10;j++){
-            System.out.println(i+ "x" +j+ "=" +(i*j));
+    // for(int i=1;i<=10;i++){
+    //     System.out.println("La tabla del: "+i);
+    //     for(int j=1;j<=10;j++){
+    //         System.out.println(i+ "x" +j+ "=" +(i*j));
             
-        }
+    //     }
         
-    }
+    // }
     
+    //Clase 6: Funciones recursivas
+    // int a = 254;
+    // System.out.println(funcion(a, 2));
+    incre(4);
+
 }
 
-    
+
