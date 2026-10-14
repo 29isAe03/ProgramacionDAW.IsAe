@@ -213,8 +213,28 @@ import Utilidades.Matematicas;
     //Clase 6: Funciones recursivas
     // int a = 254;
     // System.out.println(funcion(a, 2));
-    incre(4);
+    // incre(4);
 
+    try{
+        imprimirDivision();
+    }catch(Exception e){
+        System.out.println("");
+    }
 }
+public void imprimirDivision() throws Exception{
+    try{
+        int resultado=dividir(10, 3);
+        System.out.println(resultado);
+    }catch(Exception e){
+        System.out.println("Error1");
+    }
+}
+
+public static int dividir(int numerador, int denominador) throws Exception{
+
+    return numerador/denominador;
+    
+}
+
 
 

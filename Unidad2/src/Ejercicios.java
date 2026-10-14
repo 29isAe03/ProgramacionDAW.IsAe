@@ -44,7 +44,7 @@ public class Ejercicios {
             return true;
             
         }
-        
+    
 
 
     public void ejercicio1(){ //Saludo dependiendo de la hora
