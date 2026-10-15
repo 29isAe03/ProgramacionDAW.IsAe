@@ -337,7 +337,7 @@ public class Ejercicios {
        int digitos=sc.nextInt();
 
        for(int i=0; i<digitos; i++){
-         System.out.println(i);
+         System.out.println(fibonacci(i));
        }
 
     } 
