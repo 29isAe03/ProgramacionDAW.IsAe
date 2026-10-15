@@ -314,18 +314,23 @@ public class Ejercicios {
         int numero=sc.nextInt();
         int contadorPar=0;
         int contadorImpar=0;
+        //Hago que si el numero es 0 solo habra un digito par
         if(numero==0){
             contadorPar=1;
         }
         else{
+            //Cuando llegue a 0 no habra mas digitos
             while(numero>0){
+              //Hago que se divida entre 10 ya que el resto siempre sera el primer digito
               int digito=numero%10;
+              //Veo si es par
               if(digito%2==0){
                 contadorPar++;
               }
               else{
                   contadorImpar++;
               }
+              //Lo divido entre 10 pero ahora me quedo con el cociente para quitarle un digito
               numero=numero/10;
             }
         System.out.println("Tiene "+contadorPar+ " Pares y "+contadorImpar+" Impares");
@@ -335,7 +340,7 @@ public class Ejercicios {
       Scanner sc=new Scanner(System.in);
        System.out.print("Diga los digitos: ");
        int digitos=sc.nextInt();
-
+       //Hago un bucle para que pille todos los numeros hasta el pedido
        for(int i=0; i<digitos; i++){
          System.out.println(fibonacci(i));
        }
