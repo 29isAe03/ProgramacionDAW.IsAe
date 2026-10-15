@@ -44,26 +44,35 @@ public class Ejercicios {
             return true;
             
         }
-    
+    public static int fibonacci(int numero){ //Fibonacci con función recursiva
+        if(numero<=0){
+            return 0;
+        }
+        else if(numero==1){
+            return 1;
+        }
+        else{
+            return fibonacci(numero-1) + fibonacci(numero-2);
+        }
+    }
 
-
-    public void ejercicio1(){ //Saludo dependiendo de la hora
+    public static void ejercicio1(){ //Saludo dependiendo de la hora
         //Pongo la libreria del tiempo
         LocalDateTime hoy = LocalDateTime.now();
         //Creo la variable hora que tenga la hora actual
         int hora=(hoy.getHour());
         //Pongo que ponga cada mensaje dependiendo de la hora
-        if(hora>=6 || hora<=12 ){
+        if(hora>=6 && hora<=12 ){
             System.out.println("Buenos dias!");
         }
-        else if(hora>=13 || hora<=20){
+        else if(hora>=13 && hora<=20){
             System.out.println("Buenas tardes!");
         }
         else if(hora>=21||hora<=5 ){
             System.out.println("Buenas noches!");
         }
     }
-    public void ejercicio2(){ //Sueldo dependiendo de <>40 horas
+    public static void ejercicio2(){ //Sueldo dependiendo de <>40 horas
         //Activo la libreria Scanner
         Scanner sc =new Scanner(System.in);
         System.out.print("Diga las horas trabajadas:");
@@ -90,7 +99,7 @@ public class Ejercicios {
         }
         System.out.println("Ha ganado "+dinero+" euros");
     }
-    public void actividad3(){ //Signo zodiacal
+    public static void ejercicio3(){ //Signo zodiacal
         //Abro Scanner
        Scanner sc=new Scanner(System.in);
        //Hago que tengas que escribir el dia y el mes
@@ -137,7 +146,7 @@ public class Ejercicios {
         System.out.println("Es piscis");
        }
     }
-    public void actividad4(){ //Alumno recuperación
+    public static void ejercicio4(){ //Alumno recuperación
         Scanner sc=new Scanner(System.in);
         //Hago que pida la nota de los dos parciales
         System.out.print("Diga la nota del primer parcial: ");
@@ -165,7 +174,7 @@ public class Ejercicios {
             }
         }
     }
-    public void actividad6(){ //Sueldo con IRPF y dias en dieta
+    public static void ejercicio6(){ //Sueldo con IRPF y dias en dieta
         
         Scanner sc=new Scanner(System.in);
         //Creo una variable para los dos sueldos
@@ -201,7 +210,7 @@ public class Ejercicios {
          System.out.println("---------------------------");
         System.out.println("Sueldo neto: "+neto);
     }
-    public void actividad5(){ //Horario
+    public static void ejercicio5(){ //Horario
                 Scanner sc=new Scanner(System.in);
         //Creo una variable para cada dia de la semana teniendo cada una sus horas, aparte creo una que tenga todos los dias
         String horario=" Lunes: Entornos, LM, BD, Sistemas, Sistemas, Programación \n Martes: Sistemas, Digit, IPE, Sostenibilidad, Programación, Programación \n Miércoles: Programación, Programación, IPE, BD, BD, Programación \n Jueves: LM, LM, BD, BD, Programación, Programación \n Viernes: Sistemas, Sistemas, BD, Entornos, Entornos, IPE";
@@ -211,8 +220,12 @@ public class Ejercicios {
         String jueves="Jueves: LM, LM, BD, BD, Programación, Programación";
         String viernes="Viernes: Sistemas, Sistemas, BD, Entornos, Entornos, IPE";
         int dia;
-        //Muestro todo el horario
-        System.out.println(horario);
+
+        System.out.println(lunes);
+        System.out.println(martes);
+        System.out.println(miercoles);
+        System.out.println(jueves);
+        System.out.println(viernes);
         
         System.out.print("Inserte dia: ");
         //Hago un bucle para que te vaya diciendo dias hasta que escribas 7
@@ -231,7 +244,7 @@ public class Ejercicios {
         }
         while(dia!=7);
     }
-    public void actividad7(){ //Contador positivos, negativos y sietes
+    public static void ejercicio7(){ //Contador positivos, negativos y sietes
                         Scanner sc=new Scanner(System.in);
         //Creo una variable para el numero, contador de positivos, negativos y sietes, y la suma para hacer la media
         int numero=0;
@@ -269,7 +282,7 @@ public class Ejercicios {
     
 
     }
-    public void actividad8(){ //Fibonacci
+    public static void ejercicio8(){ //Fibonacci
                 Scanner sc=new Scanner(System.in);
         //Hago que te pida la cantidad de numeros que quieras y creo los dos primeros valores: 0 y 1
         System.out.print("Diga cantidad de numeros: ");
@@ -285,8 +298,8 @@ public class Ejercicios {
             valor2=valor3;
         }
     }
-    public void actividad9(){ //Numeros primos del 1 al 10
-                System.out.println("Números primos del 1 al 100");
+    public static void ejercicio9(){ //Numeros primos del 1 al 100
+      System.out.println("Números primos del 1 al 100");
         //Hago un for para que vaya subiendo del 1 al 100 viendo si es primo
         for(int i=1;i<=100;i++){
             //Si se cumple la funcion, es primo
@@ -295,36 +308,41 @@ public class Ejercicios {
             }
         }
     }
-    public void actividad10(){ //Digitos pares e impares de un numero
+    public static void ejercicio10(){ //Digitos pares e impares de un numero
                 Scanner sc=new Scanner(System.in);
         System.out.print("Escriba el numero: ");
         int numero=sc.nextInt();
         int contadorPar=0;
         int contadorImpar=0;
-        //Si el numero es 0, solo tendra un numero par
         if(numero==0){
             contadorPar=1;
         }
         else{
             while(numero>0){
-              //Hago que se divida el numero entre 10, el resto siempre sera el primer digito del número, ahi se mira si ese es par o impar
               int digito=numero%10;
-              //Un numero es par si se puede dividir entre 2 y el resto es 0
               if(digito%2==0){
                 contadorPar++;
               }
               else{
                   contadorImpar++;
               }
-              //Despues de ver si es par o impar, se divide entre 10 para eliminar el digito que ya se chequeo y que pase al siguiente
               numero=numero/10;
             }
         System.out.println("Tiene "+contadorPar+ " Pares y "+contadorImpar+" Impares");
         }
     }
+    public static void ampliacion(){ //Fibonacci con recursiva
+      Scanner sc=new Scanner(System.in);
+       System.out.print("Diga los digitos: ");
+       int digitos=sc.nextInt();
+
+       for(int i=0; i<digitos; i++){
+         System.out.println(i);
+       }
+
+    } 
     public static void main(String[] args) {
-
-
+       
 
     }
 }
