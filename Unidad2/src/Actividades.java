@@ -129,17 +129,120 @@ public class Actividades {
             else{}
         }
     }
-
-
-    public static void main(String[] args) {
+    public static void actividad6(){ //Factorial
         Scanner sc=new Scanner(System.in);
+        //Hago que pida el numero
         System.out.print("Diga el numero: ");
         int numero=sc.nextInt();
         int factorial=1;
+        //Hago un for que empiece en el numero y se vaya multiplicando hasta llegar a 1
         for(int i=numero; i>=1;i--){
            factorial=factorial*i;
         }
         System.out.println(factorial);
+    }
+    public static void actividad7(){ //Contador de edades
+        Scanner sc=new Scanner(System.in);
+        //Creo un maximo y un minimo, la variable del numero y un contador
+        int max=0;
+        int min=0;
+        int numero;
+        int contador=0;
+        do{
+            System.out.println("Escriba la edad: ");
+            numero=sc.nextInt(); sc.nextLine();
+            //Hago un if para cada caso que pueda ser numero
+            if(contador==0){
+                max=numero;
+                min=numero;
+                contador++;
+            }
+            else if(numero>max){ //Si un numero es mas grande que el maximo, ese numero pasa a ser el maximo
+                max=numero;
+            }
+            else if(numero<min && numero!=-1){ //Lo mismo pero con el minimo. Aparte especifico que si numero es -1 no cuente
+                min=numero;
+            }
+
+        }
+        while(numero!=-1);
+        System.out.println("El maximo es: "+max);
+        System.out.println("El minimo es: "+min);
+
+    }
+    public static void actividad8(){ //Contador de edades con adultos
+        Scanner sc=new Scanner(System.in);
+        //Creo un maximo y un minimo, la variable del numero y un contador
+        int max=0;
+        int min=0;
+        int numero;
+        int contador=0;
+        int adultos=0;
+        int suma=0;
+        int total=0;
+        do{
+            System.out.println("Escriba la edad: ");
+            numero=sc.nextInt(); sc.nextLine();
+            //Hago un if para cada caso que pueda ser numero
+            if(contador==0){
+                max=numero;
+                min=numero;
+                contador++;
+            }
+            if(numero>max){ //Si un numero es mas grande que el maximo, ese numero pasa a ser el maximo
+                max=numero;
+            }
+            if(numero<min && numero!=-1){ //Lo mismo pero con el minimo. Aparte especifico que si numero es -1 no cuente
+                min=numero;
+            }
+            if(numero!=-1){
+                suma=suma+numero;
+                total++;
+            }
+            if(numero>=18){
+                adultos++;
+            }
+
+        }
+        while(numero!=-1);
+        System.out.println("El maximo es: "+max);
+        System.out.println("El minimo es: "+min);
+        System.out.println("Hay "+adultos+" adultos");
+        System.out.println("Hay "+total+" alumnos");
+        System.out.println("La suma es: "+suma);
+        System.out.println("El promedio de edad es: "+(suma/(double)total));
+    }
+
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int max=100;
+        int min=1;
+        int contador=0;
+        int intento;
+        int numero=(int)(Math.random()*(max-min+1)+min);
+        System.out.println("Adivina el numero");
+        do{
+            intento=sc.nextInt(); sc.nextLine();
+            if(intento>numero){
+                System.out.println("Numero incorrecto. El numero es menor");
+                contador++;
+            }
+            else if(intento<numero){
+                System.out.println("Numero incorrecto. El numero es mayor");
+                contador++;
+            }
+            else if(intento==numero){
+                System.out.println("Numero correcto! Intentos: "+contador);
+                contador++;
+            }
+        }
+        while(intento!=numero);
+        
+
+
+
+
     }
    
 
