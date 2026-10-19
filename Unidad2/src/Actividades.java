@@ -18,21 +18,34 @@ public class Actividades {
             return false;
         }
     }
-    public static int digitos(int numero){
-        if(numero==0){
+    public static int digitos(int numero){ //Numero de digitos
+        if(numero>0 && numero<=9){
             return 1;
         }
         else{
-            return numero%digitos(numero/10);
+            return 1+digitos(numero/10);
         }
     }
-
-
-
-
-
-
-
+    public static int sumaNumeros(int numero){ //Suma de numeros
+        if(numero==0){
+            return 0;
+        }
+        else if(numero==1){
+            return 1;
+        }
+        else{
+            return numero+sumaNumeros(numero-1);
+        }
+    }
+    public static int potencia(int numero, int numero2){ //Potencia
+        if(numero2==1){
+            return numero;
+        }
+        else{
+            return numero*potencia(numero, (numero2-1));
+        }
+    }
+ 
 
     public static void actividad1(){ //Calculo con numeros aleatorios
         //Creo el rango de los numeros
@@ -374,13 +387,55 @@ public class Actividades {
         }
        }
     }
+    public static void actividad16(){ //Numero de digitos
+               Scanner sc=new Scanner(System.in);
+       //Hago que pida el numero
+       System.out.print("Diga el numero: ");
+       int numero=sc.nextInt();
+       //Uso la función recursiva
+       System.out.println(numero+" Tiene "+digitos(numero)+" digitos");
+    }
+    public static void actividad17version1(){ //Suma de numeros recursiva
+               Scanner sc=new Scanner(System.in);
+       //Hago que pida el numero
+       System.out.print("Diga el numero: ");
+       int numero=sc.nextInt();
+       //Uso la función recursiva
+       System.out.println(sumaNumeros(numero));
+   
+    }
+    public static void actividad17version2(){ //Suma de numeros iterativa
+             Scanner sc=new Scanner(System.in);
+        //Hago que pida os numeros
+        System.out.print("Diga los numeros: ");
+        int numero=sc.nextInt();
+        int suma=0;
+        //Con un bucle hago que se vaya sumando hasta que llegue al numero
+        for(int i=1;i<=numero;i++){
+            suma=suma+i;
 
+        }
+        System.out.println(suma);
+
+    }
+    public static void actividad18(){ //Potencia
+                Scanner sc=new Scanner(System.in);
+        //Hago que te pida la base y el indice
+        System.out.print("Diga la base: ");
+        int base=sc.nextInt(); sc.nextLine();
+        System.out.print("Diga el indice: ");
+        int indice=sc.nextInt();
+        //Uso la función
+        System.out.println("La potencia es: "+potencia(base, indice));
+
+    }
 
 
     public static void main(String[] args) {
-       System.out.println(digitos(23));
-    }
-   
+        
+
+     }
+
 
 
 }
