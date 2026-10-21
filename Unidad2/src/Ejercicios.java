@@ -29,13 +29,13 @@ public class Ejercicios {
         }
         return contadorImpar;
     }   
-    public static boolean primos1al100(int numero){ //Ver si un numero es primo
+    public static boolean esPrimo(int numero){ //Ver si un numero es primo
             if(numero<=1){
                 return false;
             }
             else{                   
-                for(int j=2;j<=(Math.sqrt(numero));j++){
-                    if(numero%j==0){
+                for(int i=2;i<=(Math.sqrt(numero));i++){
+                    if(numero%i==0){
                         return false;
                         
                     }
@@ -226,7 +226,8 @@ public class Ejercicios {
         System.out.println(miercoles);
         System.out.println(jueves);
         System.out.println(viernes);
-        
+        System.out.println("--------------------------------------------------------------");
+
         System.out.print("Inserte dia: ");
         //Hago un bucle para que te vaya diciendo dias hasta que escribas 7
         do{
@@ -303,7 +304,7 @@ public class Ejercicios {
         //Hago un for para que vaya subiendo del 1 al 100 viendo si es primo
         for(int i=1;i<=100;i++){
             //Si se cumple la funcion, es primo
-            if(primos1al100(i)){
+            if(esPrimo(i)){
                 System.out.println(i);
             }
         }
@@ -347,9 +348,8 @@ public class Ejercicios {
 
     } 
     public static void main(String[] args) {
-       
+       ejercicio4();
 
     }
 }
     
-
