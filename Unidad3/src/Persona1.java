@@ -1,4 +1,4 @@
-public class Persona {
+public class Persona1 {
     //Atributos
     private String nombre;
     private int edad;
@@ -6,9 +6,9 @@ public class Persona {
     private final String dni="1111111111A";
 
     //Constructor
-    public Persona(){}
+    public Persona1(){}
     
-    public Persona(String nombre, int edad, Double estatura) {
+    public Persona1(String nombre, int edad, Double estatura) {
         this.nombre = nombre;
         this.edad = edad;
         this.estatura = estatura;
@@ -37,11 +37,11 @@ public class Persona {
     //Main
     public static void main(String[] args) {
         //Crear un objeto persona
-        Persona p1=new Persona("Pepa", 18, 1.87);
-        Persona p2=new Persona("Paco", 51, 1.68);
-        Persona p3=new Persona("Miguel", 27, 1.79);
+        Persona1 p1=new Persona1("Pepa", 18, 1.87);
+        Persona1 p2=new Persona1("Paco", 51, 1.68);
+        Persona1 p3=new Persona1("Miguel", 27, 1.79);
 
-        Persona otra=p1;
+        Persona1 otra=p1;
         p1.presentacion();
         otra.setNombre("Luis");
         p1.presentacion();
