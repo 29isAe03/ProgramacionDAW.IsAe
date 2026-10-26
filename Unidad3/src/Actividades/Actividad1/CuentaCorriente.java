@@ -1,6 +1,4 @@
-package Actividades;
-import Actividades.Persona;
-
+package Actividades.Actividad1;
 
 public class CuentaCorriente {
     //Atributos
@@ -46,8 +44,8 @@ public class CuentaCorriente {
         this.saldo = saldo;
     }
 
-    public static void mostrarInfo(){
-        Actividades.Persona.informacion();
+    public void mostrarInfo(){
+        Actividades.Actividad1.Persona.informacion();
         System.out.println("Saldo: "+this.saldo);
         System.out.println("Numero de cuenta: "+this.numeroCuenta);
     }
@@ -60,7 +58,7 @@ public class CuentaCorriente {
     
     public static void main(String[] args) {
         Persona persona=new Persona();
-        mostrarInfo();
+        mostrarInfo(persona);
     }
 
 

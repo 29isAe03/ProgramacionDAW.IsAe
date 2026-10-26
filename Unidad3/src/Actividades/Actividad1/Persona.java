@@ -1,4 +1,4 @@
-package Actividades;
+package Actividades.Actividad1;
 
 public class Persona {
     //Atributos
@@ -76,7 +76,7 @@ public class Persona {
         this.estadoCivil = estadoCivil;
     }
 
-    public static void informacion(){
+    public void informacion(){
         System.out.println("Nombre: "+this.nombre);
         System.out.println("DNI: "+this.DNI);
         System.out.println("Fecha de nacimiento: "+this.fechaNacimiento);
