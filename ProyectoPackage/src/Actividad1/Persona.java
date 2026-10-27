@@ -1,4 +1,4 @@
-package Actividades.Actividad1;
+package Actividades.Actividad1.Actividad1;
 
 public class Persona {
     //Atributos
