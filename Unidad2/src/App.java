@@ -221,7 +221,7 @@ import Utilidades.Matematicas;
         System.out.println("");
     }
 }
-public void imprimirDivision() throws Exception{
+public static void imprimirDivision() throws Exception{
     try{
         int resultado=dividir(10, 3);
         System.out.println(resultado);
