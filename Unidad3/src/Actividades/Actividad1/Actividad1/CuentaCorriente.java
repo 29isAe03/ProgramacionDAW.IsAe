@@ -12,8 +12,8 @@ public class CuentaCorriente {
     }
 
 
-    public CuentaCorriente(Persona titular, int numeroCuenta, int saldo){
-        this.titular=titular;
+    public CuentaCorriente(Persona persona, int numeroCuenta, int saldo){
+        this.titular=persona;
         this.numeroCuenta=numeroCuenta;
         this.saldo=saldo;
     }
@@ -45,7 +45,7 @@ public class CuentaCorriente {
     }
 
     public void mostrarInfo(){
-        Actividades.Actividad1.Actividad1.Persona.informacion();
+        System.out.println("Titular: "+titular.getNombre());
         System.out.println("Saldo: "+this.saldo);
         System.out.println("Numero de cuenta: "+this.numeroCuenta);
     }
@@ -57,8 +57,10 @@ public class CuentaCorriente {
 
     
     public static void main(String[] args) {
-        Persona persona=new Persona();
-        mostrarInfo(persona);
+        Persona persona=new Persona("Juan", "676767X", "29/02/1999", "mi casa", "F", "Casado");
+        CuentaCorriente cuenta1=new CuentaCorriente(persona, 67, 45);
+        cuenta1.mostrarInfo();
+        
     }
 
 
