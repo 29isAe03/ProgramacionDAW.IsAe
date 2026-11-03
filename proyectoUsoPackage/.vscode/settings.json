@@ -1,8 +1,0 @@
-{
-    "java.project.sourcePaths": ["src"],
-    "java.project.outputPath": "bin",
-    "java.project.referencedLibraries": [
-        "lib/**/*.jar",
-        "c:\\Users\\usuario\\Desktop\\ProgramacionDAW.IsAe\\ProyectoPackage\\ProyectoPackage.jar"
-    ]
-}
