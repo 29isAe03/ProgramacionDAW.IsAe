@@ -17,15 +17,36 @@ public class Fichero{
         // }
 
 
+        // try{
+        //     Scanner leer = new Scanner(new File("./Unidad3/src/Unidad3.java"));
+        //     String linea;
+        //     while(leer.hasNextLine()){
+        //         System.out.println(leer.nextLine());
+        //     }
+        // } catch(Exception e){
+        //     System.out.println(e.getMessage());
+        // }
+
+        // 
+        
         try{
-            Scanner leer = new Scanner(new File("./Unidad3/src/Unidad3.java"));
+            Scanner leer = new Scanner(new File("./Unidad3/src/FicheroEjemplo.txt"));
             String linea;
             while(leer.hasNextLine()){
-                System.out.println(leer.nextLine());
+                linea=leer.nextLine();
+                System.out.println(linea);
+                Scanner sc = new Scanner(linea);//Procesar la línea leída
+                sc.useDelimiter("[;\\s]+");
+                int numero1=sc.nextInt();
+                int numero2=sc.nextInt();
+                int numero3=sc.nextInt();
+                System.out.println(numero1+"-"+numero2+"-"+numero3);
             }
-        } catch(Exception e){
-            System.out.println(e.getMessage());
-        }
+            leer.close();
+        }catch(Exception e){
+             System.out.println(e.getMessage());
  
+        }
     }
+
 }
