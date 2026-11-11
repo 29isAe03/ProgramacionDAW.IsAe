@@ -343,7 +343,7 @@ public class Actividades {
         System.out.println("El MCD es: "+numero1);
     }
     public static void actividad12(){ //MCM
-         Scanner sc=new Scanner(System.in);
+        Scanner sc=new Scanner(System.in);
         //Hago que te pidan los numeros
         System.out.println("Introduce los numeros: ");
         int numero1=Math.abs(sc.nextInt()); sc.nextLine();

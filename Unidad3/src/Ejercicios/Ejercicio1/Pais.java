@@ -7,8 +7,9 @@ public class Pais {
     private int PIB;
 
     //Constructores
+    //Constructor por defecto
     public Pais(){}
-
+    //Constructor por parametros
     public Pais (String nombre, int poblacion, int PIB){
         this.nombre=nombre;
         this.poblacion=poblacion;
@@ -42,15 +43,18 @@ public class Pais {
     public void setPIB(int pIB) {
         PIB = pIB;
     }
-      //Que imprima el PIB por capita
+    //Que imprima el PIB por capita
     public void pibPorCapita(){
-        System.out.println("El PIB por capita de "+getNombre()+" es: "+(getPIB()*100000)/poblacion);
+        System.out.println("El PIB por capita de "+getNombre()+" es: "+(getPIB()*100000)/poblacion+" euros por persona");
     }
 
     public static void main(String[] args) {
-        Pais espana=new Pais("España", 498, 100 );
-        System.out.println(espana.getPoblacion());
+        //Creo un objeto que sea un pais poniendo el nombre, poblacion y el PIB.
+        Pais espana=new Pais("España", 49, 448 );
         espana.pibPorCapita();
+        Pais francia=new Pais("Francia", 69, 759);
+        francia.pibPorCapita();
+        //Los datos estan en millones al estar tratando con numeros muy grandes
     }
     
 }
