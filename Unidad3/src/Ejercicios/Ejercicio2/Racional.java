@@ -49,7 +49,7 @@ public class Racional {
         System.out.println(getNumerador()+"/"+getDenominador());    
     }
     public void suma(Racional racional2){
-        
+        int den=mcm(this.denominador,)
     }
     public void resta(){
     }

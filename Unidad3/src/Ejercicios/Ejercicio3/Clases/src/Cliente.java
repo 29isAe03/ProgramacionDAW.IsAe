@@ -6,16 +6,18 @@ public class Cliente {
     private String Nombre;
     private String Ciudad;
     private int codigo;
+    private Sucursal sucursal;
 
     //Constructores
     public Cliente(){};
 
-    public Cliente(String DNI, String fechaNacimiento, String Nombre, String Ciudad, int codigo){
+    public Cliente(String DNI, String fechaNacimiento, String Nombre, String Ciudad, int codigo, Sucursal sucursal){
         this.DNI=DNI;
         this.fechaNacimiento=fechaNacimiento;
         this.Nombre=Nombre;
         this.Ciudad=Ciudad;
         this.codigo=codigo;
+        this.sucursal=sucursal;
     }
     
 
@@ -60,6 +62,12 @@ public class Cliente {
     public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
+    public Sucursal getSucursal(){
+        return sucursal;
+    }
+    public void setSucursal(Sucursal sucursal){
+        this.sucursal = sucursal;
+    }
    
     //
     public void imprimirCliente(){
@@ -68,13 +76,10 @@ public class Cliente {
         System.out.println("Nombre: "+getNombre());
         System.out.println("Ciudad: "+getCiudad());
         System.out.println("Codigo: "+getCodigo());
+        if(this.sucursal != null){
+            System.out.println("Sucursal: "+sucursal.getCiudad());
+        }
 
     }
 
-    //Main
-    public static void main(String[] args) {
-        Cliente cliente1=new Cliente("49971673X", "31/12/2008", "Santiago", "Huercal-Overa", 6767);
-        cliente1.imprimirCliente();
-    }
-    
 }

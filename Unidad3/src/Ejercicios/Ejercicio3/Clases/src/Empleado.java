@@ -71,7 +71,7 @@ public class Empleado {
         System.out.println("Domicilio: "+getDomicilio());
     }
 
-
+     
 
     
 }
