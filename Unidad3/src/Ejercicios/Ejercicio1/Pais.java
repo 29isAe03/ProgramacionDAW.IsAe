@@ -15,6 +15,8 @@ public class Pais {
         this.poblacion=poblacion;
         this.PIB=PIB;
     }
+    //Constructor por copia
+    public Pais (Pais copia){};
 
 
     //Metodos

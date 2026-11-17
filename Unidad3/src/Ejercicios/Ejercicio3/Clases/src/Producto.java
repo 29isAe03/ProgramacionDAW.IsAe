@@ -17,6 +17,8 @@ public class Producto {
         this.costo=costo;
         this.fabrica=fabrica;
     }
+
+    public Producto(Producto Copia){}
     
     //Metodos
     public int getCodigo() {
@@ -58,6 +60,8 @@ public class Producto {
     public void setFabrica(Fabrica fabrica) {
         this.fabrica = fabrica;
     }
+    
+        //Que imprima la información
 
     public void imprimirProducto(){
         System.out.println("Codigo; "+getCodigo());

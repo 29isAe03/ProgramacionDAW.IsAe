@@ -1,6 +1,6 @@
 public class Prueba {
     public static void main(String[] args) {
-        //Objetos
+        //Creo un objeto de cada clase
         Sucursal sucursal1=new Sucursal(6767, "Calle X, Nº5", "Murcia" );
 
         Cliente cliente1=new Cliente("2313123X", "31/12/2008", "Santiago", "Huercal-Overa", 4342, sucursal1);
@@ -17,7 +17,7 @@ public class Prueba {
 
         Vende vende1=new Vende(6.99, sucursal1, producto1);
 
-        //Funciones
+        //Imprimo todo
         System.out.println("SUCURSAL");
         System.out.println("-------------");
         sucursal1.imprimirSucursal();

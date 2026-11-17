@@ -15,6 +15,8 @@ public class Trabaja {
         this.sucursal=sucursal;
         this.empleado=empleado;
     }
+
+    public Trabaja(Trabaja copia){}
     //Metodos
     public String getDia() {
         return dia;
@@ -47,6 +49,8 @@ public class Trabaja {
     public void setEmpleado(Empleado empleado) {
         this.empleado = empleado;
     }
+
+        //Que imprima la información
 
     public void imprimirTrabaja(){
         System.out.println("Dia: "+getDia());

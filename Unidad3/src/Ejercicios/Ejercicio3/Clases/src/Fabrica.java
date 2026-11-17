@@ -18,6 +18,8 @@ public class Fabrica {
         this.cantEmp=cantEMP;
     }
 
+    public Fabrica (Fabrica Copia){}
+
     //Metodos
     public int getCUIT() {
         return CUIT;
@@ -58,7 +60,9 @@ public class Fabrica {
     public void setCantEmp(int cantEmp) {
         this.cantEmp = cantEmp;
     }
-    
+        
+    //Que imprima la información
+
     public void imprimirFabrica(){
         System.out.println("CUIT: "+getCUIT());
         System.out.println("Nombre: "+getNombre());

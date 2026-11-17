@@ -18,6 +18,8 @@ public class Empleado {
         this.Domicilio=Domicilio;
     }
 
+    public Empleado (Empleado Copia){}
+
 
 
     //Metodos
@@ -62,6 +64,9 @@ public class Empleado {
     public void setDomicilio(String domicilio) {
         Domicilio = domicilio;
     }
+
+        //Que imprima la información
+
 
     public void imprimirEmpleado(){
         System.out.println("Legajo: "+getLegajo());

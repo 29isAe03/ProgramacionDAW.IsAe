@@ -20,8 +20,8 @@ public class CopiarFichero {
            File ficheroSegundo=new File(teclado.nextLine());
            Scanner fichero2=new Scanner(ficheroSegundo);
            String nombreSalida=ficheroPrimero.getName()+"_"+ficheroSegundo.getName();
-           File ficheroSalida= new File(nombreSalida);
-           PrintWriter ficheroSalidaEscribir= new PrintWriter(ficheroSalida);
+           File carpetaDestino=ficheroPrimero.getParentFile();
+           PrintWriter ficheroSalidaEscribir=new PrintWriter(carpetaDestino,nombreSalida);
 
 
            while(fichero1.hasNextLine()){

@@ -19,6 +19,8 @@ public class Cliente {
         this.codigo=codigo;
         this.sucursal=sucursal;
     }
+
+    public Cliente (Cliente copia){}
     
 
     //Metodos
@@ -69,7 +71,7 @@ public class Cliente {
         this.sucursal = sucursal;
     }
    
-    //
+    //Que imprima la información
     public void imprimirCliente(){
         System.out.println("DNI: "+getDNI());
         System.out.println("Fecha de Nacimiento: "+getFechaNacimiento());

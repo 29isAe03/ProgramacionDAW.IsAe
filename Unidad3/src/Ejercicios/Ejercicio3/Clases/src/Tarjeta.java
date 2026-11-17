@@ -19,6 +19,8 @@ public class Tarjeta {
         this.fechaCaducidad=fechaCaducidad;
         this.cliente=cliente;
     }
+
+    public Tarjeta(Tarjeta copia){}
     //Metodos
     //Getters y Setters
     public int getNumero() {
@@ -60,6 +62,9 @@ public class Tarjeta {
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
+       
+    //Que imprima la información
+
 
     public void imprimirTarjeta(){
         System.out.println("Numero: "+getNumero());

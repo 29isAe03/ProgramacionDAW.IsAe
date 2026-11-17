@@ -14,6 +14,8 @@ public class Sucursal {
         this.ciudad=ciudad;
     }
 
+    public Sucursal(Sucursal Copia){}
+
     //Metodos
     public int getCodigo() {
         return Codigo;
@@ -38,6 +40,8 @@ public class Sucursal {
     public void setCiudad(String ciudad) {
         this.ciudad = ciudad;
     }
+
+        //Que imprima la información
 
     public void imprimirSucursal(){
         System.out.println("Codigo: "+getCodigo());

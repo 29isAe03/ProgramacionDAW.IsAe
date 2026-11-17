@@ -12,6 +12,8 @@ public class Vende {
         this.sucursal=sucursal;
         this.producto=producto;
     }
+
+    public Vende(Vende copia){}
     
     //Metodos
     public double getPrecioVenta() {
@@ -37,6 +39,8 @@ public class Vende {
     public void setProducto(Producto producto) {
         this.producto = producto;
     }
+
+        //Que imprima la información
 
     public void imprimirVende(){
         System.out.println("Precio venta: "+getPrecioVenta());
