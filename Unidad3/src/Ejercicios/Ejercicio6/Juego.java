@@ -134,7 +134,7 @@ public class Juego{
         Carta cartaJugador2=new Carta(copas, 0);
         //Jugadores
         Jugador jugador1=new Jugador("Santiago", cartaJugador1);
-        Jugador jugador2=new Jugador("Maria", cartaJugador2);
+        Jugador jugador2=new Jugador("Ángel", cartaJugador2);
         //El juego
         Juego juego=new Juego(0, 0, jugador1, jugador2);
         
@@ -143,7 +143,7 @@ public class Juego{
          //Ahora tengo que guardar el historial de partidas en un .txt que se guardara en la carpeta de las clases
         try{
             //Hago que cree el fichero
-            FileWriter fileWriter = new FileWriter("./Unidad3/src/Ejercicios/Ejercicio6/Victorias.txt", true); //Pongo el Append para que se pueda actualizar con cada partida
+            FileWriter fileWriter = new FileWriter("./Unidad3/src/Ejercicios/Ejercicio6", true); //Pongo el Append para que se pueda actualizar con cada partida
             PrintWriter printWriter = new PrintWriter(fileWriter);
             //Depende quien gane pondra una cosa en el historial u otra
             if(juego.getGanadas1()==3){
