@@ -1,5 +1,8 @@
 package Ejercicios.Ejercicio6;
 
+import java.io.FileWriter;
+import java.io.PrintWriter;
+
 public class Juego{
 
     //Atributos
@@ -63,12 +66,15 @@ public class Juego{
         System.out.println("Victorias del Jugador 2: "+getGanadas2());
     }
 
+    //Metodo del juego
     public void cartaAlta(){
+        //Creo el maximo y el minimo para el numero aleatorio
       int max=12;
         int min=1;
-
+       
+        //Hago un do while ya que tiene que tiene que hacer algo hasta que uno de los jugadores llegue a 3 victorias
         do{
-
+            //Pongo un valor a cada carta e imprimo la informacion de la carta y del jugador
             getJugador1().getCarta().setValor((int)(Math.random()*(max-min+1)+min));
             System.out.println("Jugador 1");
             getJugador1().imprimirJugador();
@@ -77,34 +83,83 @@ public class Juego{
             System.out.println("Jugador 2");
             getJugador2().imprimirJugador();
             getJugador2().getCarta().imprimirCarta();
-
-            if(cartaJugador1.getValor()>cartaJugador2.getValor()){
+            //Hago la logica de quien gana y quien pierde
+            if(getJugador1().getCarta().getValor()>getJugador2().getCarta().getValor()){
                 System.out.println(jugador1.getNombre()+" ha ganado");
-                juego.setGanadas1(juego.getGanadas1()+1);
-            }else if(cartaJugador1.getValor()<cartaJugador2.getValor()){
+                setGanadas1(getGanadas1()+1);
+            }else if(getJugador1().getCarta().getValor()<getJugador2().getCarta().getValor()){
                 System.out.println(jugador2.getNombre()+" ha ganado");
-                juego.setGanadas2(juego.getGanadas2()+1);
+                setGanadas2(getGanadas2()+1);
+            }else if(getJugador1().getCarta().getValor()==getJugador2().getCarta().getValor()){
+                //Si es un empate, recurro a los palos, creo una jerarquia de palos en el que Oro es el mas fuerte y Bastos el mas debil. Logro eso creando una clase de Palos con un atributo que sea la fuerza del palo
+                System.out.println("Empate, comparacion de Palos");
+                //Hago la misma logica que con el valor de las cartas, pero ahora con la fuerza de los palos
+                if(getJugador1().getCarta().getPalo().getValor()>getJugador2().getCarta().getPalo().getValor()){
+                    System.out.println(getJugador1().getNombre()+" ha ganado");
+                    setGanadas1(getGanadas1()+1);
+                }
+                else if(getJugador1().getCarta().getPalo().getValor()<getJugador2().getCarta().getPalo().getValor()){
+                    System.out.println(getJugador2().getNombre()+" ha ganado");
+                    setGanadas2(getGanadas2());
+                }else if(getJugador1().getCarta().getPalo().getValor()==getJugador2().getCarta().getPalo().getValor()){
+                    //Si existe el caso en el que saquen el mismo numero y el mismo Palo. Seria un empate definitivo y se seguiria jugando sin contarle la victoria a nadie
+                    System.out.println("Empate definitivo");
+                }
             }
             System.out.println("------------------------------");
-
-            if(juego.getGanadas1()==3){
+             
+            //Cuando alguno de los jugadores llegue a 3 victorias, imprimira el ganador
+            if(getGanadas1()==3){
                 System.out.println(jugador1.getNombre()+" ha ganado la partida!");
             }
-            else if(juego.getGanadas2()==3){
+            else if(getGanadas2()==3){
                 System.out.println(jugador2.getNombre()+" ha ganado la partida!");
             }
-        }while(juego.getGanadas1()<3 || juego.getGanadas2()<3);
-    }
+        }while(getGanadas1()<3 || getGanadas2()<3);
+     }
 
-    }
+    
+    
+
 
     public static void main(String[] args) {
-        Carta cartaJugador1=new Carta();
-        Carta cartaJugador2=new Carta();
+        //Creo todas las clases primero
+        //Palos
+        Palos oros=new Palos(4, "Oros");
+        Palos copas=new Palos(3, "Copas");
+        Palos espadas=new Palos(2, "Espadas");
+        Palos bastos=new Palos(1, "Bastos");
+        //Cartas de cada jugador
+        Carta cartaJugador1=new Carta(oros, 0);
+        Carta cartaJugador2=new Carta(copas, 0);
+        //Jugadores
         Jugador jugador1=new Jugador("Santiago", cartaJugador1);
         Jugador jugador2=new Jugador("Maria", cartaJugador2);
-        Juego juego=new Juego();
+        //El juego
+        Juego juego=new Juego(0, 0, jugador1, jugador2);
+        
+        //Uso el metodo
+        juego.cartaAlta();
+         //Ahora tengo que guardar el historial de partidas en un .txt que se guardara en la carpeta de las clases
+        try{
+            //Hago que cree el fichero
+            FileWriter fileWriter = new FileWriter("./Unidad3/src/Ejercicios/Ejercicio6/Victorias.txt", true); //Pongo el Append para que se pueda actualizar con cada partida
+            PrintWriter printWriter = new PrintWriter(fileWriter);
+            //Depende quien gane pondra una cosa en el historial u otra
+            if(juego.getGanadas1()==3){
+                printWriter.println(juego.getJugador1().getNombre()+" gano a "+juego.getJugador2().getNombre());
+            }
+            else if(juego.getGanadas2()==3){
+                printWriter.println(juego.getJugador2().getNombre()+" ha ganado a "+juego.getJugador1().getNombre());
+            }     
+            printWriter.close();
+        } catch(Exception e){
+            System.out.println(e.getMessage());
+        }
 
         
     
+    }
+
+
 }

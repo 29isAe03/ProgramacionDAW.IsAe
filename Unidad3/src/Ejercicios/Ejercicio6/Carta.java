@@ -2,17 +2,17 @@ package Ejercicios.Ejercicio6;
 
 public class Carta {
     //Atributos
-    private String palo;
+    private Palos palo;
     private int valor;
 
     //Constructores
     
     public Carta(){
-        palo="";
+        palo.setValor(0);
         valor=0;
     }
 
-    public Carta(String palo, int valor){
+    public Carta(Palos palo, int valor){
         this.palo=palo;
         this.valor=valor;
     }
@@ -21,11 +21,11 @@ public class Carta {
 
     //Metodos
 
-    public String getPalo() {
+    public Palos getPalo() {
         return palo;
     }
 
-    public void setPalo(String palo) {
+    public void setPalo(Palos palo) {
         this.palo = palo;
     }
 
@@ -40,7 +40,7 @@ public class Carta {
     //Procedimiento que imprima la informacion
 
     public void imprimirCarta(){
-        System.out.println("Palo: "+getPalo());
+        System.out.println("Palo: "+getPalo().getNombre());
         System.out.println("Valor: "+getValor());
     }
 }
