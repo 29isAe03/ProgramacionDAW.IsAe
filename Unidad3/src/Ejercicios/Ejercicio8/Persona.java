@@ -54,5 +54,12 @@ public class Persona {
         this.poblacion = poblacion;
     }
 
+    public void imprimirPersona(){
+        System.out.println("Nombre: "+getNombre());
+        System.out.println("Edad: "+getEdad());
+        System.out.println("Telefono: "+getTelefono());
+        System.out.println("Poblacion: "+getPoblacion());
+    }
+
     
 }
