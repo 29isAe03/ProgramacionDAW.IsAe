@@ -10,20 +10,23 @@ public class CopiarFichero {
         
     
        try{
+           //Creo el objeto para que detecte la entrada por teclado para poner los ficheros que queremos copair
            Scanner teclado= new Scanner(System.in);
 
-
+           //Pide el primer fichero 
            System.out.println("Inserte ruta del primer fichero: ");
            File ficheroPrimero=new File(teclado.nextLine());
            Scanner fichero1=new Scanner(ficheroPrimero);
+           //Pide el segundo fichero
            System.out.println("Inserte ruta del segundo fichero: ");
            File ficheroSegundo=new File(teclado.nextLine());
            Scanner fichero2=new Scanner(ficheroSegundo);
+           //Pide el segundo fichero
            String nombreSalida=ficheroPrimero.getName()+"_"+ficheroSegundo.getName();
-           File carpetaDestino=ficheroPrimero.getParentFile();
-           PrintWriter ficheroSalidaEscribir=new PrintWriter(carpetaDestino,nombreSalida);
+           //Le pongo nombre al fichero creado y que se cree en la misma carpeta que los otros dos
+           PrintWriter ficheroSalidaEscribir=new PrintWriter(nombreSalida);
 
-
+           //Lee y copia lo que pone en los otros ficheros
            while(fichero1.hasNextLine()){
                String linea=fichero1.nextLine();
                ficheroSalidaEscribir.println(linea);
