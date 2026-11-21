@@ -22,11 +22,13 @@ public class Main {
                 persona1.setEdad(sc.nextInt());
                 persona1.setTelefono(sc.nextInt());
                 persona1.setPoblacion(sc.next());
+
+                persona1.imprimirPersona();
         
             }
             leer.close();
             //Que imprima los datos
-            persona1.imprimirPersona();
+            
         }catch(Exception e){
              System.out.println(e.getMessage());
  

@@ -1,4 +1,4 @@
-package Actividades.Actividad1.Actividad2;
+package Actividades.Actividad2;
 
 public class Ciudad {
     //Atributos
