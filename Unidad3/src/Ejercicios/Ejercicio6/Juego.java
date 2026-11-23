@@ -69,7 +69,7 @@ public class Juego{
     //Metodo del juego
     public void cartaAlta(){
         //Creo el maximo y el minimo para el numero aleatorio
-      int max=12;
+        int max=12;
         int min=1;
        
         //Hago un do while ya que tiene que tiene que hacer algo hasta que uno de los jugadores llegue a 3 victorias
@@ -134,7 +134,7 @@ public class Juego{
         Carta cartaJugador2=new Carta(copas, 0);
         //Jugadores
         Jugador jugador1=new Jugador("Santiago", cartaJugador1);
-        Jugador jugador2=new Jugador("Ángel", cartaJugador2);
+        Jugador jugador2=new Jugador("Adán", cartaJugador2);
         //El juego
         Juego juego=new Juego(0, 0, jugador1, jugador2);
         
@@ -150,7 +150,7 @@ public class Juego{
                 printWriter.println(juego.getJugador1().getNombre()+" gano a "+juego.getJugador2().getNombre());
             }
             else if(juego.getGanadas2()==3){
-                printWriter.println(juego.getJugador2().getNombre()+" ha ganado a "+juego.getJugador1().getNombre());
+                printWriter.println(juego.getJugador2().getNombre()+" gano a "+juego.getJugador1().getNombre());
             }     
             printWriter.close();
         } catch(Exception e){
