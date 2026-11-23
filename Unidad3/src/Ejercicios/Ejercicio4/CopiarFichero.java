@@ -24,7 +24,7 @@ public class CopiarFichero {
            //Pide el segundo fichero
            String nombreSalida=ficheroPrimero.getName()+"_"+ficheroSegundo.getName();
            //Le pongo nombre al fichero creado y que se cree en la misma carpeta que los otros dos
-           PrintWriter ficheroSalidaEscribir=new PrintWriter(nombreSalida);
+           PrintWriter ficheroSalidaEscribir=new PrintWriter("./Unidad3/src/Ejercicios/Ejercicio4/"+nombreSalida);
 
            //Lee y copia lo que pone en los otros ficheros
            while(fichero1.hasNextLine()){
