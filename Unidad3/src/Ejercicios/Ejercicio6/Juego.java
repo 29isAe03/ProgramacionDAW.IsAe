@@ -66,8 +66,20 @@ public class Juego{
         System.out.println("Victorias del Jugador 2: "+getGanadas2());
     }
 
+    //Hago un metodo para que pueda salir un palo aleatorio, creando un numero aleatorio y un switch con cada numero
+    public Palos obtenerPalo(Palos oros, Palos copas, Palos espadas, Palos bastos){
+        int numero=(int)(Math.random()*(4-1+1)+1);
+        switch(numero){
+            case 1: return bastos;
+            case 2: return espadas; 
+            case 3: return copas; 
+            case 4: return oros;
+            default: return bastos;
+        }
+    }
+
     //Metodo del juego
-    public void cartaAlta(){
+    public void cartaAlta(Palos oros, Palos copas, Palos espadas, Palos bastos){
         //Creo el maximo y el minimo para el numero aleatorio
         int max=12;
         int min=1;
@@ -76,10 +88,13 @@ public class Juego{
         do{
             //Pongo un valor a cada carta e imprimo la informacion de la carta y del jugador
             getJugador1().getCarta().setValor((int)(Math.random()*(max-min+1)+min));
+            //Hago uso del metodo para conseguir el palo aleatorio
+            getJugador1().getCarta().setPalo(obtenerPalo(oros, copas, espadas, bastos));
             System.out.println("Jugador 1");
             getJugador1().imprimirJugador();
             getJugador1().getCarta().imprimirCarta();
             getJugador2().getCarta().setValor((int)(Math.random()*(max-min+1)+min));
+            getJugador2().getCarta().setPalo(obtenerPalo(oros, copas, espadas, bastos));
             System.out.println("Jugador 2");
             getJugador2().imprimirJugador();
             getJugador2().getCarta().imprimirCarta();
@@ -102,8 +117,8 @@ public class Juego{
                     System.out.println(getJugador2().getNombre()+" ha ganado");
                     setGanadas2(getGanadas2());
                 }else if(getJugador1().getCarta().getPalo().getValor()==getJugador2().getCarta().getPalo().getValor()){
-                    //Si existe el caso en el que saquen el mismo numero y el mismo Palo. Seria un empate definitivo y se seguiria jugando sin contarle la victoria a nadie
-                    System.out.println("Empate definitivo");
+                    //Si existe el caso en el que saquen el mismo numero y el mismo Palo. Seria un caso imposible, no puede haber 2 cartas iguales con el mismo numero y el mismo palo.
+                    System.out.println("Caso imposible, se repite");
                 }
             }
             System.out.println("------------------------------");
@@ -130,8 +145,11 @@ public class Juego{
         Palos espadas=new Palos(2, "Espadas");
         Palos bastos=new Palos(1, "Bastos");
         //Cartas de cada jugador
-        Carta cartaJugador1=new Carta(oros, 0);
-        Carta cartaJugador2=new Carta(copas, 0);
+
+        Carta cartaJugador1=new Carta();
+        Carta cartaJugador2=new Carta();
+        
+
         //Jugadores
         Jugador jugador1=new Jugador("Santiago", cartaJugador1);
         Jugador jugador2=new Jugador("Adán", cartaJugador2);
@@ -139,7 +157,7 @@ public class Juego{
         Juego juego=new Juego(0, 0, jugador1, jugador2);
         
         //Uso el metodo
-        juego.cartaAlta();
+        juego.cartaAlta(oros,copas, espadas, bastos);
          //Ahora tengo que guardar el historial de partidas en un .txt que se guardara en la carpeta de las clases
         try{
             //Hago que cree el fichero

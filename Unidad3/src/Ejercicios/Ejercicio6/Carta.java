@@ -8,7 +8,7 @@ public class Carta {
     //Constructores
     
     public Carta(){
-        palo.setValor(0);
+        palo=null;
         valor=0;
     }
 

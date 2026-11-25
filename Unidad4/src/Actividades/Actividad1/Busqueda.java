@@ -27,7 +27,8 @@ public class Busqueda {
        
     }
     public static void main(String[] args) {
-        int[] array={3,4,2,4,2};
+        int[] array={3,4,2,7,2};
+        System.out.println(posicion(array, 7));
         System.out.println(posicion2(array, 2));
         
         
