@@ -9,7 +9,7 @@ public class Main {
         Persona persona1=new Persona();
         try{
             //les doy el fichero de donde sacar la informacion
-            Scanner leer = new Scanner(new File("./Unidad3/src/Ejercicios/Ejercicio8/Leer.txt"));
+            Scanner leer = new Scanner(new File("./Unidad3/src/Ejercicios/Ejercicio8/persona.csv"));
             String linea;
             //Que lea todas las lineas
             while(leer.hasNextLine()){
@@ -24,6 +24,7 @@ public class Main {
                 persona1.setPoblacion(sc.next());
 
                 persona1.imprimirPersona();
+                System.out.println("---------");
         
             }
             leer.close();

@@ -48,6 +48,10 @@ public class Heroe {
         this.ataque = ataque;
     }
 
+    public void recibirDanio(int danio){
+        setVida(getVida()-danio);
+    }
+
     public void imprimirHeroe(){
         System.out.println("Heroe");
         System.out.println(getNombre());

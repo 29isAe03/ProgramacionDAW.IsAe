@@ -18,7 +18,12 @@ public class Persona {
         this.poblacion=poblacion;
     }
 
-    public Persona(Persona copia){}
+    public Persona(Persona copia){
+        this.nombre=copia.nombre;
+        this.edad=copia.edad;
+        this.telefono=copia.telefono;
+        this.poblacion=copia.poblacion;
+    }
 
     //Metodos
 

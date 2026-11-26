@@ -47,6 +47,9 @@ public class Enemigo {
     public void setAtaque(int ataque) {
         this.ataque = ataque;
     }
+    public void recibirDanio(int danio){
+        setVida(getVida()-danio);
+    }
 
     public void imprimirEnemigo(){
         System.out.println("Enemigo");

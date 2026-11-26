@@ -108,6 +108,7 @@ public class Juego{
             }else if(getJugador1().getCarta().getValor()==getJugador2().getCarta().getValor()){
                 //Si es un empate, recurro a los palos, creo una jerarquia de palos en el que Oro es el mas fuerte y Bastos el mas debil. Logro eso creando una clase de Palos con un atributo que sea la fuerza del palo
                 System.out.println("Empate, comparacion de Palos");
+                System.out.println(getJugador1().getCarta().getPalo().getNombre()+" VS "+getJugador2().getCarta().getPalo().getNombre());
                 //Hago la misma logica que con el valor de las cartas, pero ahora con la fuerza de los palos
                 if(getJugador1().getCarta().getPalo().getValor()>getJugador2().getCarta().getPalo().getValor()){
                     System.out.println(getJugador1().getNombre()+" ha ganado");
@@ -130,7 +131,7 @@ public class Juego{
             else if(getGanadas2()==3){
                 System.out.println(jugador2.getNombre()+" ha ganado la partida!");
             }
-        }while(getGanadas1()<3 || getGanadas2()<3);
+        }while(getGanadas1()<3 && getGanadas2()<3);
      }
 
     

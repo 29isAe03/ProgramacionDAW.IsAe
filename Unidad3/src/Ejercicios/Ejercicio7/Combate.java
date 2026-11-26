@@ -56,14 +56,14 @@ public class Combate {
                 if(heroe1.getVida()>0){
                     System.out.println("El Heroe ataca!");
                     //le resta la vida al enemigo segun su daño
-                    enemigo1.setVida(enemigo1.getVida()-heroe1.getAtaque());
+                    enemigo1.recibirDanio(heroe1.getAtaque());
                     //Muestra la cantidad de vida que le queda al enemigo
                     System.out.println("El enemigo tiene "+enemigo1.getVida()+"HP");
                 }
                 //Lo mismo que con el heroe
                 if(enemigo1.getVida()>0){
                     System.out.println("El Enemigo ataca!");
-                    heroe1.setVida(heroe1.getVida()-enemigo1.getAtaque());
+                    heroe1.recibirDanio(enemigo1.getAtaque());
                     System.out.println("El heroe tiene "+heroe1.getVida()+"HP");
                 }
                 System.out.println("-------------------");
@@ -74,12 +74,12 @@ public class Combate {
                 System.out.println("Turno "+contador);
                 if(enemigo1.getVida()>0){
                     System.out.println("El Enemigo ataca!");
-                    heroe1.setVida(heroe1.getVida()-enemigo1.getAtaque());
+                    heroe1.recibirDanio(enemigo1.getAtaque());
                     System.out.println("El heroe tiene "+heroe1.getVida()+"HP");
                 }
                 if(heroe1.getVida()>0){
                     System.out.println("El Heroe ataca!");
-                    enemigo1.setVida(enemigo1.getVida()-heroe1.getAtaque());
+                    enemigo1.recibirDanio(heroe1.getAtaque());
                     System.out.println("El enemigo tiene "+enemigo1.getVida()+"HP");
                 }
                 System.out.println("-------------------");
